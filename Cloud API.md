@@ -34,3 +34,13 @@
 * `URL(Uniform Resource Locator)`: resource가 어떤 action에 연결되거나, 그 action을 동작 하게 하는 경로이다.
 
 ### API Design Review
+* 다음은 Companies에 관한 API 예시이다. 이는, 좋지 못한 API 디자인의 표본이다.
+
+```
+/addNewEmployee
+/updateEmployee
+/deleteEmployee
+/deleteAllEmployees
+/promoteEmployee
+/promoteAllEmployee
+```
