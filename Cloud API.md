@@ -45,4 +45,4 @@
 /promoteAllEmployee
 ```
 
-* URL은 동사나 action이 아닌 resource(명사)만을 포함해야 한다. /addNewEmployee라는 API 경로는 Employee라는 resource에 addNew라는 action을 포함하고 있다.
+* URL은 동사나 `action`이 아닌 `resource(명사)`만을 포함해야 한다. /addNewEmployee라는 API 경로는 Employee라는 resource에 addNew라는 `action`을 포함하고 있다.
