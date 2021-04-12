@@ -34,7 +34,7 @@
 * `URL(Uniform Resource Locator)`: resource가 어떤 action에 연결되거나, 그 action을 동작 하게 하는 경로이다.
 
 ### API Design Review
-* 다음은 Companies에 관한 API 예시이다. 이는, 좋지 못한 API 디자인의 표본이다.
+* 다음은 Companies에 관한 API 디자인 예시이며, 이는 좋지 못한 API 디자인의 표본이다.
 
 ```
 /addNewEmployee
@@ -44,3 +44,5 @@
 /promoteEmployee
 /promoteAllEmployee
 ```
+
+* URL은 동사나 action이 아닌 resource(명사)만을 포함해야 한다. /addNewEmployee라는 API 경로는 Employee라는 resource에 addNew라는 action을 포함하고 있다.
