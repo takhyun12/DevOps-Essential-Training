@@ -90,14 +90,31 @@ POST /companies는 새 company를 만들고, 만들어진 company의 상세 정�
 404 Not Found – 요청된 리소스가 현재 존재하지 않는 경우.
 410 Gone – 요청된 리소스가 내부적으로 이동이 있어서 현재 해당 방법으로 접근이 불가능한 경우.
 ```
+* GET method가 URI를 너무 길게 만든다면, 서버는 HTTP status로 414 URI Too Long를 리턴 할 수 있다. 
+* 그런 경우에는, POST method를 이용해서 request body에 param을 보내는 방법이 있다.
 
 ### Searching, sorting, filtering and pagination
-`Sorting`: 클라이언트가 정렬된 companies 리스트를 받고 싶을 때, GET /company endpoint는 쿼리에 들어갈 sort param들을 받아야 할 것이다.
-`GET /companies?sort=rank_asc`
-Filtering – 데이터 셋을 필터링 하기 위해서 다수의 query parm을 보내야 할 것이다.
-ex) GET/companies?category=banking&location=india
-Searching – company의 이름으로 검색 하기 위한 API endpoint는 다음과 같을 것이다.
-ex) GET /companies?search=Digital Mckinsey
-Pagination – 데이터 셋의 규모가 커지면, 퍼포먼스를 향상시고 response를 쉽게 다루기 위해 해당 데이터 셋을 나누게 될 것이다. 각각에 접근하기 위해 param을 보내야 한다.
-ex) GET /companies?page=23
-query param을 추가하면서 GET method가 URI를 너무 길게 만든다면, 서버는 HTTP status로 414 URI Too Long를 리턴 할 수 있다. 그런 경우에는, POST method를 이용해서 request body에 param을 보내는 방법이 있다.
+* `Sorting`: 클라이언트가 정렬된 companies 리스트를 받고 싶을 때, GET /company endpoint는 쿼리에 들어갈 sort param들을 받아야 할 것이다.
+
+```
+GET /companies?sort=rank_asc
+```
+
+* `Filtering`: 데이터 셋을 필터링 하기 위해서 다수의 query parm을 보내야 할 것이다.
+
+```
+GET/companies?category=banking&location=india
+```
+
+* `Searching`: company의 이름으로 검색 하기 위한 API endpoint는 다음과 같을 것이다.
+
+```
+GET /companies?search=Digital Mckinsey
+```
+
+* `Pagination`: 데이터 셋의 규모가 커지면, 퍼포먼스를 향상시고 response를 쉽게 다루기 위해 해당 데이터 셋을 나누게 될 것이다. 
+
+```
+GET /companies?page=23
+```
+
