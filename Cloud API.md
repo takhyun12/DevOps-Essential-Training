@@ -32,3 +32,5 @@
 * `Collections`: resource들의 집합이다.
 * e.g. Companies는 Company resource의 collection이다.
 * `URL(Uniform Resource Locator)`: resource가 어떤 action에 연결되거나, 그 action을 동작 하게 하는 경로이다.
+
+### API Design Review
