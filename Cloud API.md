@@ -46,3 +46,21 @@
 ```
 
 * URL은 동사나 `action`이 아닌 `resource(명사)`만을 포함해야 한다. /addNewEmployee라는 API 경로는 Employee라는 resource에 addNew라는 `action`을 포함하고 있다.
+* HTTP methods(GET, POST, DELETE, PUT)의 CRUD를 이용하여 디자인한다.
+* Resource는 API endpoint에서 항상 복수 단위어야 하고, resource의 instance에 접근 하고 싶다면, URL에 id를 포함시켜야 한다.
+
+1) `GET`: resource에 데이터를 요청하며, 그 외 다른 동작을 야기해서는 안된다.
+2) `POST`: resource를 생성하라고 서버에 요청한다.
+3) `PUT`: 서버에 resource가 있다면 update를, 없다면 create를 하도록 요청한다.
+4) `DELETE`: 어떤 resource나 그 instance를 삭제하라고 서버에 요청한다.
+
+```
+method GET, path /companies는 모든 companies의 리스트를 받는다.
+method GET, path /companies/34는 company 34의 상세 정보를 받는다.
+method DELETE, path /companies/34는 company 34를 삭제한다.
+GET /companies/3/employees는 company3에 있는 모든 employee의 리스트를 받는다.
+GET /companies/3/employees/45는 company3의 45번 employee의 상세 정보를 받는다.
+DELETE /companies/3/employees/45는 company3의 45번 employee를 삭제한다.
+POST /companies는 새 company를 만들고, 만들어진 company의 상세 정보를 리턴한다.
+```
+
