@@ -33,7 +33,7 @@
 * e.g. Companies는 Company resource의 collection이다.
 * `URL(Uniform Resource Locator)`: resource가 어떤 action에 연결되거나, 그 action을 동작 하게 하는 경로이다.
 
-### API Design Review
+### API Design
 * 다음은 Companies에 관한 API 디자인 예시이며, 이는 좋지 못한 API 디자인의 표본이다.
 
 ```
@@ -49,10 +49,10 @@
 * HTTP methods(GET, POST, DELETE, PUT)의 CRUD를 이용하여 디자인한다.
 * Resource는 API endpoint에서 항상 복수 단위어야 하고, resource의 instance에 접근 하고 싶다면, URL에 id를 포함시켜야 한다.
 
-1) `GET`: resource에 데이터를 요청하며, 그 외 다른 동작을 야기해서는 안된다.
-2) `POST`: resource를 생성하라고 서버에 요청한다.
-3) `PUT`: 서버에 resource가 있다면 update를, 없다면 create를 하도록 요청한다.
-4) `DELETE`: 어떤 resource나 그 instance를 삭제하라고 서버에 요청한다.
+1) `GET`: resource의 데이터를 서버에 요청
+2) `POST`: resource의 생성을 서버에 요청
+3) `PUT`: 서버에 resource가 있다면 update를, 없다면 create를 하도록 요청
+4) `DELETE`: 어떤 resource나 instance의 삭제를 서버에 요청한다.
 
 ```
 method GET, path /companies는 모든 companies의 리스트를 받는다.
@@ -64,3 +64,5 @@ DELETE /companies/3/employees/45는 company3의 45번 employee를 삭제한다.
 POST /companies는 새 company를 만들고, 만들어진 company의 상세 정보를 리턴한다.
 ```
 
+### HTTP response status codes
+* API를 통해 서버에 요청을 보낼 때, 클라이언트는 그 요청이 실패했는지, 통과했는지, 요청이 잘못됐는지에 대해 알아야 한다. HTTP status code는 다양한 상황에 각각 대응되는 표준 코드가 존재하고, 서버는 항상 알맞는 status code를 리턴해야 한다.
