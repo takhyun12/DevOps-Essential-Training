@@ -20,5 +20,5 @@
 * Apigee Hybrid: 온프레미스 또는 선택한 클라우드 제공업체에 설치된 런타임 영역과, Apigee 클라우드에서 실행되는 관리 영역으로 구성된 하이브리드 버전입니다. 이 모델에서는 사용자의 자체 기업 승인을 받은 경계 내에서 API 트래픽 및 데이터가 제한됩니다.
 
 #### Apigee Lifecycle
-
+* Apigee는 API Lifecycle의 전반적인 모든 영역을 관리한다.
 ![api lifecycle](https://user-images.githubusercontent.com/41291493/114329299-ee856600-9b79-11eb-88e5-5a3d1ffd6e50.png)
