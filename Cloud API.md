@@ -118,3 +118,9 @@ GET /companies?search=Digital Mckinsey
 GET /companies?page=23
 ```
 
+### Versioning
+* API의 업데이트를 고려하여 버전 정보를 포함하는것이 좋다.
+
+```
+http://api.yourservice.com/v1/companies/34/employees
+```
