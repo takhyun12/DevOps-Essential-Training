@@ -167,5 +167,38 @@ curl -X GET https://api.solapi.com/messages/v4/list --header "Authorization: HMA
 2. 클라이언트 ID/비밀번호를 발급받음
 ```
 
-* 구글이 리디렉션 URL로 구글 계정 정보를 POST로 전송할때, Access Token을 활용
-* 
+* 구글에게 인증을 요청한다
+
+```
+GET https://api.google.com/oauth2/v1/authorize
+```
+
+* 구글로부터 리다이렉션된 데이터는 code 혹은 token이 된다
+
+```
+// rseponse_type이 code일 경우
+{
+    code: 'ADFKVJCK19JDFKL2KFJLS3388',
+    state: '사용자가 보내왔던 state값'
+}
+
+// rseponse_type이 token일 경우
+{
+    access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ZwUymzWAUiTxQ...',
+    refresh_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ZwUymzWAUiTxQ...'
+}
+```
+
+* response type이 코드인 경우 Access Token을 추가로 발급받는다
+* POST body에 code와 cliend_id 등을 포함한다
+
+```
+POST https://api.google.com/oauth2/v1/access_token
+```
+
+* Access Token을 통해 API를 사용한다
+
+```
+curl -X (GET|POST) https://api.google.com/<접근하려는 API url>
+-H 'Authorization: bearer <Access Token>'
+```
