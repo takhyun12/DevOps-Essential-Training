@@ -24,8 +24,6 @@
 
 ![api lifecycle](https://user-images.githubusercontent.com/41291493/114329299-ee856600-9b79-11eb-88e5-5a3d1ffd6e50.png)
 
----
-
 ## RESTful API Design
 
 ### 관련용어
@@ -127,6 +125,28 @@ GET /companies?page=23
 http://api.yourservice.com/v1/companies/34/employees
 ```
 
---- 
+### API Key 인증 방식
+* REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가하여 인증수행
 
-### Apigee 아키텍처
+```
+// syntax
+Authorization: <AuthenticationMethod> apiKey=<API Key>, date=<Date Time>, salt=<Salt>, signature=<Signature>
+```
+
+```
+// sample
+curl -X GET https://api.solapi.com/messages/v4/list --header "Authorization: HMAC-SHA256 apiKey=NCSAYU7YDBXYORXC, date=2019-07-01T00:41:48Z, salt=jqsba2jxjnrjor, signature=1779eac71a24cbeeadfa7263cb84b7ea0af1714f5c0270aa30ffd34600e363b4"
+```
+
+* 메시지의 무결성 검증(인증)을 위한 용도로 Signature 생성 및 검증에 Hash기반의 MAC 알고리즘을 사용
+
+* HTTP Stauts code 기반의 예외처리
+
+```
+403 InvalidAPIKey - 유효한 API Key가 아님
+403 SignatureDoesNotMatch - 생성한 Signature가 일치하지 않음
+403 RequestTimeTooSkewed - 시간 값이 서버 시간을 15분 이상 벗어남
+403 DuplicatedSignature - 15분 안에 동일한 signature 값
+```
+
+*
