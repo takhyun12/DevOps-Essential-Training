@@ -24,7 +24,7 @@
 
 ![api lifecycle](https://user-images.githubusercontent.com/41291493/114329299-ee856600-9b79-11eb-88e5-5a3d1ffd6e50.png)
 
--- 
+---
 
 ## RESTful API Design
 
@@ -127,6 +127,6 @@ GET /companies?page=23
 http://api.yourservice.com/v1/companies/34/employees
 ```
 
--- 
+--- 
 
 ### Apigee 아키텍처
