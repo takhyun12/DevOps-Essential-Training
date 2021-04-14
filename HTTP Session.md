@@ -26,7 +26,7 @@ session.setAttribute(String name, Object value);
 ### Session에 저장된 값 가져오기
 
 ```javascript
-Object getAttribute(String name)
+Object getAttribute(String name);
 String valeu = (String)session.getAttribute("name"); // 형변환
 ```
 
@@ -45,4 +45,22 @@ HttpSession session = request.getSession(false);
 * 서버에 생성된 세션이 있다면 세션을 반환하고, 없다면 새 세션을 생성하여 반환한다.(default: true)
 * 파라미터로 false를 전달하면 이미 생성된 세션이 있을 때 그 세션을 반환하고 없으면 null을 반환한다.
 
-### Session 
+### Session 값 삭제
+
+```javascript
+removeAttribute(String name);
+invalidate();
+```
+
+* removeAttribute 메서드로 name 값에 해당하는 세션 정보를 삭제할 수 있다.
+* invalidate로 모든 세션 정보를 한 번에 삭제할 수 있다.
+
+### Session 유지시간 설정
+
+```javascript
+<session-config>
+  <session-timeout>30</session-timeout>
+</session-config>
+```
+
+* web.xml 파일의 <session-timeout>을 수정하면 된다.
