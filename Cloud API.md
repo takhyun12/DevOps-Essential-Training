@@ -197,6 +197,8 @@ POST https://api.google.com/oauth2/v1/access_token
 ```
 
 * Access Token을 통해 API를 사용한다
+* GET/POST header에 Access Token을 포함한다
+
 
 ```
 curl -X (GET|POST) https://api.google.com/<접근하려는 API url>
