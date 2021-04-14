@@ -5,6 +5,12 @@
 * Session은 접속한 클라어언트만의 고유공간이기 때문에, 서버에 접속한 클라이언트 숫자만큼 Session이 생성됩니다.
 * Session은 클라이언트의 브라우저 단위로 생성됩니다.
 
+### Session의 원리
+* 웹 클라이언트가 서버에게 요청을 보내면 서버는 클라이언트를 식별하는 session id를 생성한다.
+* 서버는 session id로 key와 value를 저장하는 HttpSession을 생성하고, session id를 저장하고 있는 쿠키를 생성하여 클라이언트에게 전송한다.
+* 클라이언트는 서버 측에 요청을 보낼 때, session id를 가지고 있는 쿠키를 전송한다.
+* 서버는 쿠키의 session id로 HttpSession을 찾는다.
+
 ### Session 만들기
 
 ```javascript
@@ -17,6 +23,26 @@ session.setAttribute(String name, Object value);
 * int, doublic, char등의 primitive type은 사용할 수 없다.
 * 동일한 이름으로 세션에 저장하게 되면 항상 덮어씌우게 된다.
 
-
 ### Session에 저장된 값 가져오기
-* Apigee는 API 개발 및 관리를 위한 플랫폼입니다. Apigee는 프록시 레이어와 함께 서비스를 전면에 내세워 백엔드 서비스 API의 추상화 또는 퍼사드를 제공하고 보안, 비율 제한, 할당량, 분석 등을 제공합니다.
+
+```javascript
+Object getAttribute(String name)
+String valeu = (String)session.getAttribute("name"); // 형변환
+```
+
+* 세션 객체 안에 지정한 name에 해당되는 속성이 없으면 getAttribute가 null 값을 되돌린다.
+* 반환되는 값이 Object형이기 때문에 반드시 적절한 형변환을 해야한다.
+* 세션에 저장된 값을 String 형태로 얻어오려면 cast 연산자로 형 변환을 해야한다.
+
+### Session 생성여부 확인
+
+```javascript
+HttpSession session = request.getSession();
+HttpSession session = request.getSession(true);
+HttpSession session = request.getSession(false);
+```
+
+* 서버에 생성된 세션이 있다면 세션을 반환하고, 없다면 새 세션을 생성하여 반환한다.(default: true)
+* 파라미터로 false를 전달하면 이미 생성된 세션이 있을 때 그 세션을 반환하고 없으면 null을 반환한다.
+
+### Session 
