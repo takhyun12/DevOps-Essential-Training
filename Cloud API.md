@@ -202,3 +202,8 @@ POST https://api.google.com/oauth2/v1/access_token
 curl -X (GET|POST) https://api.google.com/<접근하려는 API url>
 -H 'Authorization: bearer <Access Token>'
 ```
+
+* 권한(Scope) 에러처리 : 어플리케이션에서 요구하는 권한과 실제로 사용자가 인가한 권한이 다른경우
+* 액세스 토큰을 사용간에 권한에 대한 오류가 발생할 수 있어 예외처리를 수행해야 함
+
+---
