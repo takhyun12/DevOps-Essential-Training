@@ -72,5 +72,3 @@ invalidate();
 ```
 
 * web.xml 파일의 `<session-timeout>`을 수정하면 된다.
-
-
