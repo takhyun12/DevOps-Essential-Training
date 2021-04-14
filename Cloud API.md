@@ -108,20 +108,20 @@ GET /companies?sort=rank_asc
 GET/companies?category=banking&location=india
 ```
 
-* `Searching`: company의 이름으로 검색 하기 위한 API endpoint는 다음과 같을 것이다.
+* `Searching`: company의 이름으로 검색 하기 위한 API endpoint는 다음과 같을 것이다
 
 ```
 GET /companies?search=Digital Mckinsey
 ```
 
-* `Pagination`: 데이터 셋의 규모가 커지면, 퍼포먼스를 향상시고 response를 쉽게 다루기 위해 해당 데이터 셋을 나누게 될 것이다. 
+* `Pagination`: 데이터 셋의 규모가 커지면, 퍼포먼스를 향상시고 response를 쉽게 다루기 위해 해당 데이터 셋을 나누게 될 것이다
 
 ```
 GET /companies?page=23
 ```
 
 ### Versioning
-* API의 업데이트를 고려하여 버전 정보를 포함하는것이 좋다.
+* API의 업데이트를 고려하여 버전 정보를 포함하는것이 좋다
 
 ```
 http://api.yourservice.com/v1/companies/34/employees
@@ -156,4 +156,16 @@ curl -X GET https://api.solapi.com/messages/v4/list --header "Authorization: HMA
 
 ---
 
-## Versioning
+## OAuth2 API
+* OAuth 인증 방식은 위에서 언급한 대로 인증의 과정을 '타 서비스에게 위임' 하는 인증 방식이다
+* 사용자가 '구글 로그인' 기능을 통해 전송한 구글 계정 정보가 유효한지를 확인한 후,
+* 유효하다면 해당하는 구글 유저 정보 중 일부(유저 이름 등)를 내 웹 사이트에 제공해주는 '인증' 과정만을 처리해준다
+* Google APIs 등에서 OAuth 서비스 생성방법
+
+```
+1. 프로젝트 - 사용자 인증정보 만들기 - OAuth Client ID - 서비스 유형/이름/URL 입력
+2. 클라이언트 ID/비밀번호를 발급받음
+```
+
+* 구글이 리디렉션 URL로 구글 계정 정보를 POST로 전송할때, Access Token을 활용
+* 
