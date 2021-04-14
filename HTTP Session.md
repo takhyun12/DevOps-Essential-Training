@@ -5,11 +5,19 @@
 * Session은 접속한 클라어언트만의 고유공간이기 때문에, 서버에 접속한 클라이언트 숫자만큼 Session이 생성됩니다.
 * Session은 클라이언트의 브라우저 단위로 생성됩니다.
 
-### Session의 원리
+### Cookie 란?
+* 쿠키는 클라이언트에 저장되는 키와 값이 들어 있는 작은 데이터 파일이다.
+* 쿠키에는 이름, 값, 만료 날짜, 경로 정보가 들어있다. 
+* 쿠키는 일정 시간동안 데이터를 저장할 수 있어서 로그인 상태나 사용자 정보를 일정 시간 동안 유지해야 하는 경우에 주로 사용된다.
+* (서버 -> 클라이언트) 만들어진 Cookie는 Response Header의 Set-Cookie 속성을 통해 전달된다.
+* (클라이언트 -> 서버) 클라이언트의 브라우저는 Request Header에 자동으로 Cookie를 넣어서 요청을 보낸다.
+
+### Session과 Cookie의 원리
 * 웹 클라이언트가 서버에게 요청을 보내면 서버는 클라이언트를 식별하는 session id를 생성한다.
-* 서버는 session id로 key와 value를 저장하는 HttpSession을 생성하고, session id를 저장하고 있는 쿠키를 생성하여 클라이언트에게 전송한다.
+* 서버는 session id로 HttpSession을 생성하고, session id를 저장하고 있는 쿠키를 생성하여 클라이언트에게 전송한다.
 * 클라이언트는 서버 측에 요청을 보낼 때, session id를 가지고 있는 쿠키를 전송한다.
 * 서버는 쿠키의 session id로 HttpSession을 찾는다.
+* 세션은 서버 메모리에 저장되지만 세션 역시 클라이언트에 쿠키로 저장된다는 것이 중요하다.
 
 ### Session 만들기
 
@@ -27,7 +35,7 @@ session.setAttribute(String name, Object value);
 
 ```javascript
 Object getAttribute(String name);
-String valeu = (String)session.getAttribute("name"); // 형변환
+String value = (String)session.getAttribute("name"); // 형변환
 ```
 
 * 세션 객체 안에 지정한 name에 해당되는 속성이 없으면 getAttribute가 null 값을 되돌린다.
