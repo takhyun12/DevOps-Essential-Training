@@ -1,8 +1,7 @@
-## Backgrounds
-* API(Application Programming Interface) : 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있도록 만든 인터페이스를 뜻한다. 
+## HTTP Session
 
-## Cloud API
-### Apigee: Google Cloud's API Management platform
+### Session 이란?
+* Session은 일종의 저장공간입니다. 클라이언트(사용자) 한명이 서버에 접속을 하면 그 클라이언트만의 저장공간에 서버에 생성이 되는데 이 공간이 바로 Session입니다. Session은 접속한 클라어언트만의 고유공간이기 때문에 만약 다른 사용자가 추가로 서버에 접속하면 서버는 기존의 Session이 아닌 새로운 Session을 생성하며 이는 서버에 접속한 클라이언트 숫자만큼 Session이 생성된다는 의미와 같습니다
 
 #### Apigee 아키텍처
 * Apigee는 API 개발 및 관리를 위한 플랫폼입니다. Apigee는 프록시 레이어와 함께 서비스를 전면에 내세워 백엔드 서비스 API의 추상화 또는 퍼사드를 제공하고 보안, 비율 제한, 할당량, 분석 등을 제공합니다.
