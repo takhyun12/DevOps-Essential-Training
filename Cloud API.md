@@ -125,7 +125,7 @@ GET /companies?page=23
 http://api.yourservice.com/v1/companies/34/employees
 ```
 
-### API Key 인증 방식
+## API Key 인증 방식
 * REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가하여 인증수행
 
 ```
@@ -150,4 +150,4 @@ curl -X GET https://api.solapi.com/messages/v4/list --header "Authorization: HMA
 403 DuplicatedSignature - 15분 안에 동일한 signature 값
 ```
 
-*
+## Versioning
