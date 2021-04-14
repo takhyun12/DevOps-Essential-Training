@@ -24,6 +24,8 @@
 
 ![api lifecycle](https://user-images.githubusercontent.com/41291493/114329299-ee856600-9b79-11eb-88e5-5a3d1ffd6e50.png)
 
+---
+
 ## RESTful API Design
 
 ### 관련용어
@@ -125,6 +127,8 @@ GET /companies?page=23
 http://api.yourservice.com/v1/companies/34/employees
 ```
 
+---
+
 ## API Key 인증 방식
 * REST API를 요청(Request)할 때 HTTP 헤더에 Authorization 정보를 추가하여 인증수행
 
@@ -149,5 +153,7 @@ curl -X GET https://api.solapi.com/messages/v4/list --header "Authorization: HMA
 403 RequestTimeTooSkewed - 시간 값이 서버 시간을 15분 이상 벗어남
 403 DuplicatedSignature - 15분 안에 동일한 signature 값
 ```
+
+---
 
 ## Versioning
