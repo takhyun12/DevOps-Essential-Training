@@ -139,7 +139,8 @@ curl -X GET https://api.solapi.com/messages/v4/list --header "Authorization: HMA
 ```
 
 * 메시지의 무결성 검증(인증)을 위한 용도로 Signature 생성 및 검증에 Hash기반의 MAC 알고리즘을 사용
-
+* Signature는 중복사용이 불가하며 15분 안에 전송되는 요청(Request)의 Signature 값은 항상 다름
+* Salt는 매번 요청때마다 다른 문자열로 변경하여 요청 시간대가 같아도 항상 Signature가 다른 값으로 생성되도록 함
 * HTTP Stauts code 기반의 예외처리
 
 ```
