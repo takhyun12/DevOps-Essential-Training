@@ -10,5 +10,5 @@
 ## Table of Contents
 1. [Cloud API](https://github.com/takhyun12/DevOps-Essential-Training/blob/main/Cloud%20API.md)
 2. [HTTP Session](https://github.com/takhyun12/DevOps-Essential-Training/blob/main/HTTP%20Session.md)
-3. [Shell Script]
+3. [Shell Script](https://github.com/takhyun12/DevOps-Essential-Training/blob/main/Shell%20script.md)
 4. [AWS]
