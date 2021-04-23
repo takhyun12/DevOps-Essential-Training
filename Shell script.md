@@ -54,7 +54,6 @@ get_result_func
 echo $ret_value
 ```
 
-
 ```
 $ ./shell_script_practice.sh
 aaaaaaaaa
