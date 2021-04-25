@@ -24,3 +24,11 @@
 * Q11. How can DynamoDB be accessed from within a VPC without going through an Internet Gateway? `Use a VPC Gateway Endpoint.`
 
 * Q12. How does DynamoDB know when to expire the items from a table using the Time To Live feature? `An attribute in the item contains the time at which to expire the item.`
+
+* Q13. Using Optimistic Locking, the user is responsible for managing the version of an item using an attribute. `True`
+
+* Q14. When querying a DynamoDB Local Secondary Index that doesn't have a required attribute specified in the query, what is the most optimal way to get the data if that attribute is rarely needed? `DynamoDB will return the attribute from the main table if it can't find it in the index.`
+
+* Q15. Where should large attribute values should be stored in relation to DynamoDB? `Amazon Simple Storage Service`
+
+* Q16. Which of the following statement is TRUE concerning Amazon DynamoDB Accelerator (DAX)? `DAX should be used for an application reading from the same partition key very often.`
