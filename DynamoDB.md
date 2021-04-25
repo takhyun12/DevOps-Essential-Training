@@ -32,3 +32,30 @@
 * Q15. Where should large attribute values should be stored in relation to DynamoDB? `Amazon Simple Storage Service`
 
 * Q16. Which of the following statement is TRUE concerning Amazon DynamoDB Accelerator (DAX)? `DAX should be used for an application reading from the same partition key very often.`
+
+* Q17. Which of the following is a type of NoSQL Database? Select two. `Key-value store` `Document database`
+
+* Q18. Which of the following can be added or changed after the creation of a DynamoDB table? `Global Secondary Index`
+
+* Q19. Which of the following are part of the mandatory parameters when creating a DynamoDB table via the SDK with the on-demand read/write capacity mode? Select two. `Partition Key name` `Table name`
+
+* Q20. The metric of ConsumedReadCapacityUnits is currently much lower than the Read Capacity Unit provisioned on a DynamoDB table. However, users are saying that they are receiving an error message of ProvisionedThroughputExceededException. What could be the issue? `The queries aren't uniformly distributed across all logical partition keys in the table.`
+
+* Q21. Which of the following AWS service will help determine latency issues per query in DynamoDB? `AWS X-Ray`
+
+* Q22. What are the two types of read/write capacity modes for processing reads and writes on your tables? Select 2. `Provisioned` `On-demand`
+
+* Q23. How many Scan queries need to be sent to DynamoDB to get all the items from the table if the table contains 10 items each with 200KB of data? `2`
+
+* Q24. A DynamoDB table is made up of a Partition Key of UserID, a Sort Key with the date and time and an attribute of Score providing the list of all the scores for a game. A dashboard needs to display the 5 highest scores from the table. What is the most efficient way to keep this dashboard in real time? `Use DynamoDB Stream and AWS Lambda to update the dashboard each time a higher score is added.`
+
+* Q25. How can the permissions of a user be restricted only query specific attributes with the least amount of work? `Configure an Identity and Access Management Policy and apply it to the User.`
+
+* Q26. Which of the following statement is FALSE concerning secondary indexes in DynamoDB? `Local and Global Secondary Indexes are synchronously updated when the main table is updated.`
+
+* Q27. What feature of DynamoDB is necessary to make use of Optimistic Locking? `Conditional writes`
+
+* Q28. Given a table that has a Partition Key of UserID, an attribute named AccountLocked and many other attributes. The AccountLocked attribute is set to TRUE when the UserID is has its account locked and isn't set when it's not locked. Not many accounts are typically locked at a time compared to the hundreds of thousands of users in that table. What would be the most optimal way to get a list of all UserID that have their account locked (AccountLocked set to TRUE)? `Create an index with UserID as the Primary Key and AccountLocked as the Sort Key. Send a Scan to the index to find the list of account locked.`
+
+
+
