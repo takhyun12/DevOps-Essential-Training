@@ -12,3 +12,4 @@
 2. [HTTP Session](https://github.com/takhyun12/DevOps-Essential-Training/blob/main/HTTP%20Session.md)
 3. [Shell Script](https://github.com/takhyun12/DevOps-Essential-Training/blob/main/Shell%20script.md)
 4. [AWS](https://github.com/takhyun12/DevOps-Essential-Training/blob/main/AWS.md)
+5. [DynamoDB](https://github.com/takhyun12/DevOps-Essential-Training/blob/main/DynamoDB.md)
