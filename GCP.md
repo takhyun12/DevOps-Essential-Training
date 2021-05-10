@@ -1,6 +1,6 @@
-1. If X is the standard notation for the input to an RNN, what are the standard notations for the outputs?
+1. Which of the following options describes data analysis?
 
-    - [ ] Y
+    - [x] The collection, transformation, and organization of data in order to draw conclusions, make predictions, and drive informed decision-making
     - [ ] H
-    - [x] Y(hat) and H
+    - [ ] Y(hat) and H
     - [ ] H(hat) and Y
